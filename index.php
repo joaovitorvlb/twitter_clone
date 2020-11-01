@@ -1,3 +1,7 @@
+<?php
+	$erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
+?>
+
 <!DOCTYPE HTML>
 <html lang="pt-br">
 	<head>
@@ -40,7 +44,7 @@
 						<div class="col-md-12">
 				    		<p>Você possui uma conta?</h3>
 				    		<br />
-							<form method="post" action="" id="formLogin">
+							<form method="post" action="validar_acesso.php" id="formLogin">
 								<div class="form-group">
 									<input type="text" class="form-control" id="campo_usuario" name="usuario" placeholder="Usuário" />
 								</div>
@@ -52,6 +56,12 @@
 								<button type="buttom" class="btn btn-primary" id="btn_login">Entrar</button>
 
 								<br /><br />
+                              <?php
+								if($erro == 1){
+									echo '<font color="#FF0000">Usuário e ou senha inválido(s)</font>';
+								}
+
+							?>
 								
 							</form>
 						</form>
@@ -81,3 +91,6 @@
 	
 	</body>
 </html>
+
+
+
