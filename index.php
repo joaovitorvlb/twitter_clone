@@ -16,7 +16,16 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	
 		<script>
-			// código javascript						
+			//verificar se os campos de usuário e senha foram devidamente preenchidos
+			$(document).ready(function(){
+
+				$('#btn_login').click(function(){
+
+					alert("botão entrar foi clicado");
+
+				});
+			});
+						
 		</script>
 	</head>
 
