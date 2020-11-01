@@ -22,7 +22,7 @@
 				$('#btn_login').click(function(){
 
 					if($('#campo_usuario').val() == ''){
-						
+						$('#campo_usuario').css({'border-color' : '#A94442'});
 					}
 
 				});
