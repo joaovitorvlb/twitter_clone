@@ -21,7 +21,9 @@
 
 				$('#btn_login').click(function(){
 
-					alert("botão entrar foi clicado");
+					if($('#campo_usuario').val() == ''){
+						
+					}
 
 				});
 			});
