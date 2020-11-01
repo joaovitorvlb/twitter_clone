@@ -3,13 +3,13 @@
     class db {
 
         //host
-        private $host = '10.100.26.104';
+        private $host = 'localhost';
 
         //usuario
-        private $usuario = 'root';
+        private $usuario = 'pi';
 
         //senha
-        private $senha = 'CHKplq37322';
+        private $senha = 'raspberry';
 
         //banco de dados
         private $database = 'twitter_clone';
@@ -17,7 +17,7 @@
         public function conecta_mysql(){
 
             //criar conexao
-            $con = mysql_connect($this->host, $this->usuario, $this->senha, $this->database);
+            $con = mysqli_connect($this->host, $this->usuario, $this->senha, $this->database);
 
             //ajustar o charset de comunicação entre a aplicação e o banco de dados
             mysqli_set_charset($con, 'utf8');
@@ -30,7 +30,5 @@
             return $con;
 
         }
-
     }
-
 ?>
