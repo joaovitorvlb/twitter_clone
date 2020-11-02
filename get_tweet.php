@@ -8,24 +8,17 @@
 
 	require_once('db.class.php');
 
-	$id_usuario = $_SESSION['usuario'];
-
 	$objDb = new db();
 	$link = $objDb->conecta_mysql();
-	
-	$sql = "SELECT * FROM tweet WHERE id_usuario = '$id_usuario' ORDER BY data_inclusao DESC";
+
+	$usuario = $_SESSION['usuario'];
+
+	$sql = "SELECT id FROM usuarios WHERE usuario = '$usuario'";
 
 	$resultado_id = mysqli_query($link, $sql);
 
-	if($resultado_id){
+    $row = $resultado_id->fetch_array(MYSQLI_ASSOC);
 
-		while($registro = mysqli_fetch_array($resultado_id, MYSQLI_ASSOC)){
+	error_log($row['id']);
 
-			var_dump($registro);
-			echo "<br /><br />";
-		}
-	}else{
-	
-		echo 'Erro na consulta de tweets no banco de dados!';
-	}
 ?>
