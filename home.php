@@ -63,6 +63,18 @@ if((!isset ($_SESSION['usuario']) == true) and (!isset ($_SESSION['senha']) == t
 				</div>
 			</div>
 		</div>
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div class="input-group">
+						<input type="text" id="text_tweet" class="form-control" placeholder="O que está acontecendo agora?" maxlength="140" />
+						<span class="input-group-btn">
+							<button class="btn btn-default" id="btn_tweet" type="button">Tweet</button>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
