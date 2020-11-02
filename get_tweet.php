@@ -19,6 +19,29 @@
 
     $row = $resultado_id->fetch_array(MYSQLI_ASSOC);
 
-	error_log($row['id']);
+	$id_usuario = $row['id'];
 
+	$sql = "SELECT t.data_inclusao, t.tweet, u.usuario ";
+    $sql .= "FROM tweet AS t JOIN usuarios AS u ON (t.id_usuario = u.id) ";
+    $sql .= "WHERE id_usuario = '$id_usuario' ORDER BY data_inclusao DESC";
+
+	$resultado_id = mysqli_query($link, $sql);
+
+	if($resultado_id){
+
+		while($registro = mysqli_fetch_array($resultado_id, MYSQLI_ASSOC)){
+
+			echo '<a href="#" class="list-group-item">';
+
+			echo '<h4 class="list-group-item-heading">' . $registro['usuario'] . ' </h4>';
+
+			echo '<p class="list-group-item-text">' . $registro['tweet'] . '</p>';
+
+			echo '</a>';
+		}
+	}else{
+	
+		echo 'Erro na consulta de tweets no banco de dados!';
+		error_log(mysqli_error($link));
+	}
 ?>
