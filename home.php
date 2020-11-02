@@ -49,23 +49,23 @@ if((!isset ($_SESSION['usuario']) == true) and (!isset ($_SESSION['senha']) == t
 
 
 	<div class="container">
-			<div class="col-md-3">
-				<div class="panel panel-default">
-					<div class="panel-body">
-						<h4><?= $_SESSION['usuario'] ?></h4>
-						<hr />
-						<div class="col-md-6">
-							TWEETS <br /> 1
-						</div>
-						<div class="col-md-6">
-							SEGUIDORES <br /> 1
-						</div>
+		<div class="col-md-3">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h4><?= $_SESSION['usuario'] ?></h4>
+					<hr />
+					<div class="col-md-6">
+						TWEETS <br /> 1
+					</div>
+					<div class="col-md-6">
+						SEGUIDORES <br /> 1
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 </body>
 </html>
