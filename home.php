@@ -28,7 +28,7 @@ if((!isset ($_SESSION['usuario']) == true) and (!isset ($_SESSION['senha']) == t
 
 			$('#btn_tweet').click(function(){
 
-				f($('#texto_tweet').val().length > 0){
+				if($('#text_tweet').val().length > 0){
 
 					$.ajax({
 
@@ -39,8 +39,10 @@ if((!isset ($_SESSION['usuario']) == true) and (!isset ($_SESSION['senha']) == t
 						data: $('#form_tweet').serialize(),
 
 						success: function(data){
-
-							alert(data);
+							
+							$('#text_tweet').val('');
+							
+							alert('Tweet incluído com sucesso!!!');
 						}
 					});
 				}
@@ -93,7 +95,7 @@ if((!isset ($_SESSION['usuario']) == true) and (!isset ($_SESSION['senha']) == t
 			<div class="panel panel-default">
 				<div class="panel-body">
 					<form id="form_tweet" class="input-group">
-						<input type="text" id="text_tweet" class="form-control" placeholder="O que está acontecendo agora?" maxlength="140" />
+						<input type="text" id="text_tweet" name="text_tweet"class="form-control" placeholder="O que está acontecendo agora?" maxlength="140" />
 						<span class="input-group-btn">
 							<button class="btn btn-default" id="btn_tweet" type="button">Tweet</button>
 						</span>
