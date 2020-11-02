@@ -3,7 +3,7 @@
 
     $usuario = $_POST['usuario'];
     $email = $_POST['email'];
-    $senha = $_POST['senha'];
+    $senha = md5($_POST['senha']);
 
     $objDb = new db();
     $link = $objDb->conecta_mysql();
@@ -16,7 +16,4 @@
     }else{
         echo "Erro ao registrar o usuário!";
     }
-
-	  
-    printf("Errormessage: %s\n", mysqli_error($link));
 ?>

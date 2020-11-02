@@ -1,8 +1,6 @@
 <?php
 session_start();
 
-echo $_SESSION['usuario'];
-
 if((!isset ($_SESSION['usuario']) == true) and (!isset ($_SESSION['senha']) == true)){
 
 	unset($_SESSION['usuario']);
