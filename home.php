@@ -39,16 +39,32 @@ if((!isset ($_SESSION['usuario']) == true) and (!isset ($_SESSION['senha']) == t
 						data: $('#form_tweet').serialize(),
 
 						success: function(data){
-							
+
 							$('#text_tweet').val('');
-							
+
 							alert('Tweet incluído com sucesso!!!');
 						}
 					});
 				}
 			});
-		});
-	</script>
+
+			function atualizaTweet(){
+
+			//carregar os tweets
+
+			$.ajax({
+
+				url: 'get_tweet.php',
+
+				success: function(data){
+
+					$('#tweets').html(data);
+				}
+			});
+		}
+		atualizaTweet();
+	});
+</script>
 
 </head>
 
@@ -101,6 +117,7 @@ if((!isset ($_SESSION['usuario']) == true) and (!isset ($_SESSION['senha']) == t
 						</span>
 					</form>
 				</div>
+				<div id="tweets" class="list-group"></div>
 			</div>
 		</div>
 		<div class="col-md-3">
