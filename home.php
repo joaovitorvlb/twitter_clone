@@ -1,7 +1,12 @@
-<?
+<?php
 session_start();
 
-if(!$_SESSION['usuario']){
+echo $_SESSION['usuario'];
+
+if((!isset ($_SESSION['usuario']) == true) and (!isset ($_SESSION['senha']) == true)){
+
+	unset($_SESSION['usuario']);
+	unset($_SESSION['senha']);
 	header('Location: index.php?erro=1');
 }
 ?>
