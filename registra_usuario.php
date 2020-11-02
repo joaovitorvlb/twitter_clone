@@ -48,7 +48,22 @@
         echo 'Erro ao tentar localizar o registro de email';
     }
 
-    die();
+    if($usuario_existe || $email_existe){
+
+        $retorno_get = '';
+
+        if($usuario_existe){
+            $retorno_get .= "erro_usuario=1&";
+        }
+
+        if($email_existe){
+            $retorno_get .= "erro_email=1&";
+        }
+
+        header('Location: inscrevase.php?' . $retorno_get);
+        die();
+
+    }
 
 
     $sql = "INSERT INTO usuarios (usuario, email, senha) VALUES ('$usuario', '$email', '$senha')";
