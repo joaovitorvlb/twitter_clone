@@ -5,6 +5,9 @@
     $email = $_POST['email'];
     $senha = md5($_POST['senha']);
 
+    $usuario_existe = false;
+    $email_existe = false;
+
     $objDb = new db();
     $link = $objDb->conecta_mysql();
 
@@ -16,7 +19,10 @@
 
         if(isset($dados_usuario['usuario'])){
 
-            echo 'Usuário já cadastrado';
+            if(isset($dados_usuario['usuario'])){
+
+            $usuario_existe = true;
+        }
 
         }else{
 
@@ -36,12 +42,14 @@
 
         if(isset($dados_usuario['email'])){
 
-            echo 'Email já cadastrado';
+            if(isset($dados_usuario['email'])){
+
+            $email_existe = true;
+        }
 
         }else{
 
             echo 'Email não cadastrado, ok, pode cadastrar';
-
         }
 
     }else{
