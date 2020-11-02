@@ -22,6 +22,20 @@ if((!isset ($_SESSION['usuario']) == true) and (!isset ($_SESSION['senha']) == t
 	<!-- bootstrap - link cdn -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+
+			$('#btn_tweet').click(function(){
+
+				if($('#text_tweet').val().length > 0){
+
+					alert('Campo está preenchido');
+				}
+			});
+		});
+	</script>
+
 </head>
 
 <body>
