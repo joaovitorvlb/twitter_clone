@@ -75,6 +75,13 @@ if((!isset ($_SESSION['usuario']) == true) and (!isset ($_SESSION['senha']) == t
 				</div>
 			</div>
 		</div>
+		<div class="col-md-3">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h4><a href="#">Procurar por pessoas</a></h4>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
