@@ -38,6 +38,11 @@ if(!$_SESSION['usuario']){
 						success: function(data){
 
 							$('#pessoas').html(data);
+
+							$('.btn_seguir').click(function(){
+
+								var id_usuario = $(this).data('id_usuario');
+							});
 						}
 					});
 				}
