@@ -98,7 +98,7 @@ if(!$_SESSION['usuario']){
 						</span>
 					</form>
 				</div>
-			</div>a
+			</div>
 			<div id="pessoas" class="list-group"></div>
 		</div>
 		<div class="col-md-3">
