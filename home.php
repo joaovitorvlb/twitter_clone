@@ -42,7 +42,7 @@ if((!isset ($_SESSION['usuario']) == true) and (!isset ($_SESSION['senha']) == t
 
 							$('#text_tweet').val('');
 
-							alert('Tweet incluído com sucesso!!!');
+							atualizaTweet();
 						}
 					});
 				}
