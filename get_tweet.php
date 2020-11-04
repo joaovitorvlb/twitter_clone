@@ -8,18 +8,10 @@
 
 	require_once('db.class.php');
 
-	$objDb = new db();
-	$link = $objDb->conecta_mysql();
+    $id_usuario = $_SESSION['id_usuario'];
 
-	$usuario = $_SESSION['usuario'];
-
-	$sql = "SELECT id FROM usuarios WHERE usuario = '$usuario'";
-
-	$resultado_id = mysqli_query($link, $sql);
-
-    $row = $resultado_id->fetch_array(MYSQLI_ASSOC);
-
-	$id_usuario = $row['id'];
+    $objDb = new db();
+    $link = $objDb->conecta_mysql();
 
 	$sql = "SELECT DATE_FORMAT(t.data_inclusao, '%d %b %Y %T') AS data_inclusao_formatada, t.tweet, u.usuario ";
     $sql .= "FROM tweet AS t JOIN usuarios AS u ON (t.id_usuario = u.id) ";
