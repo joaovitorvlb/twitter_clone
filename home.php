@@ -128,10 +128,10 @@ if((!isset ($_SESSION['usuario']) == true) and (!isset ($_SESSION['senha']) == t
 					<h4><?= $_SESSION['usuario'] ?></h4>
 					<hr />
 					<div class="col-md-6">
-						TWEETS <br /> 1
+						TWEETS <br /> <?= $qtde_tweets ?>
 					</div>
 					<div class="col-md-6">
-						SEGUIDORES <br /> 1
+						SEGUIDORES <br /> <?= $qtde_seguidores ?>
 					</div>
 				</div>
 			</div>
