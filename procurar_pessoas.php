@@ -43,6 +43,10 @@ if(!$_SESSION['usuario']){
 
 								var id_usuario = $(this).data('id_usuario');
 
+								$('#btn_seguir_' + id_usuario).hide();
+
+								$('#btn_deixar_seguir_' + id_usuario).show();
+
 								$.ajax({
 
 									url: 'seguir.php',
@@ -54,6 +58,30 @@ if(!$_SESSION['usuario']){
 									success: function(data){
 
 										alert("Registro efetuado com sucesso!");
+									}
+								});
+							});
+
+							$('.btn_deixar_seguir').click(function(){
+
+								var id_usuario = $(this).data('id_usuario');
+
+								$('#btn_seguir_' + id_usuario).show();
+
+								$('#btn_deixar_seguir_' + id_usuario).hide();
+
+								$.ajax({
+
+									url: 'deixar_seguir.php',
+
+									method: 'POST',
+
+									data: { deixar_seguir_id_usuario : id_usuario },
+
+									success: function(data){
+
+										alert("Registro removido com sucesso!");
+
 									}
 								});
 							});
