@@ -7,6 +7,6 @@
 
     session_unset();
 
-    echo 'Esperamos você de volta em breve!!!';
+    header('Location: home.php');
 
 ?>
